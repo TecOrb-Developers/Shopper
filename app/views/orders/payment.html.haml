@@ -1,0 +1,23 @@
+- @page_title = 'Checkout'
+= render 'orders/checkout_sidebar'
+
+.checkout
+  %p.secure Secure connection
+  %h3 Pay using your credit/debit card
+  = form_for @order, :url => checkout_payment_path, :html => {:class => 'checkout'} do |f|
+    = field_set_tag nil, :class => 'payment' do
+      %h3 This is a demo form. Any values entered here will be accepted.
+      %dl
+        %dt= label_tag 'card_number', "Full Card Number"
+        %dd.number= text_field_tag 'card_number', '', :name => nil
+      %dl
+        %dt= label_tag 'exp_month', "Expiry Date (mm/yyyy)"
+        %dd.expiry
+          = select_tag nil, options_for_select((1..12).to_a), :id => ''
+          = select_tag nil, options_for_select((Date.today.year..Date.today.year + 10).to_a), :class => 'year'
+      %dl
+        %dt= label_tag 'cvc', "Security Code"
+        %dd.cvc
+          = text_field_tag 'cvc', '', :name => nil, :maxlength => 4
+          %span This is the 3 digit number on the back of your card.
+    %p.submit= f.submit "Review your order", :class => 'review'

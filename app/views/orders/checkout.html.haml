@@ -1,0 +1,51 @@
+- @page_title = 'Checkout'
+= render 'checkout_sidebar'
+    
+.checkout
+  %p.secure Secure connection
+  %h2 Place your order
+  %p.intro
+    Fantastic! You're ready to place your order, just follow the instructions below and
+    we'll get your products shipped to you as quickly as we can.
+
+  %h3 Review the products in your shopping bag
+  = render 'shared/order_items', :order => @order
+
+  - if @order.delivery_service
+    %h3 Complete your details below to complete your order
+    
+    = form_for @order, :url => checkout_path, :html => {:class => 'checkout disableable'} do |f|
+      = f.error_messages
+      .customer
+        = field_set_tag do
+          %dl
+            %dt= f.label :first_name, "Name", :class => 'req'
+            %dd.name
+              = f.text_field :first_name, :placeholder => 'First Name'
+              = f.text_field :last_name, :placeholder => 'Last Name'
+          %dl
+            %dt= f.label :company, "Company Name (optional)"
+            %dd= f.text_field :company
+          %dl
+            %dt= f.label :email_address, 'Your E-Mail Address', :class => 'req'
+            %dd= f.text_field :email_address
+          %dl
+            %dt= f.label :phone_number, 'Your Contact Phone Number', :class => 'req'
+            %dd= f.text_field :phone_number
+
+        = field_set_tag do
+          %dl
+            %dt= f.label :address1, "Billing/Delivery Address", :class => 'req'
+            %dd= f.text_field :address1, :placeholder => "Line 1"
+            %dd= f.text_field :address2, :placeholder => "Line 2"
+            %dd= f.text_field :address3, :placeholder => "Town/City"
+            %dd= f.text_field :address4, :placeholder => "County"
+            %dd= f.country_select :country, ['United Kingdom', 'United States']
+            %dt= f.label :postcode, "Postcode", :class => 'req'
+            %dd= f.text_field :postcode, :placeholder => "", :class => 'postcode'
+      
+      %p.submit= f.submit "Continue to payment"
+
+  - else
+    %p Please call us to place this order. 
+    

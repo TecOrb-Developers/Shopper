@@ -1,0 +1,10 @@
+- active_nav_item :catalogue
+- @page_title = @product_category.name
+.category
+  %h2= @product_category.name
+  - unless @product_category.description.blank?
+    %p.intro= @product_category.description
+  - if @products.empty?
+    %p.noProducts There are no products in this category
+  - else
+    = render 'shared/product_list', :products => @products

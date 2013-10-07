@@ -1,0 +1,12 @@
+# !! Remember to restart your server after making changes to this file.
+
+store_name: Widgets Inc.
+email_address: sales@example.com
+currency_unit: '&pound;'
+tax_name: VAT
+
+smtp_settings:
+  address: smtp.deliverhq.com
+  user_name: 7qjneudxv5
+  password: qzo2jm13dn
+  

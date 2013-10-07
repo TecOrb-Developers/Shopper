@@ -1,0 +1,9 @@
+- @page_title = 'Your Shopping Bag'
+.checkout
+  %h2 Your shopping bag
+  %p.intro
+    The items listed below are currently in your shopping bag. If you're ready to place your order
+    just click the 'Checkout' button on the right and we'll ask for a few details and place the order.
+
+  = render 'shared/order_items', :order => current_order
+  
