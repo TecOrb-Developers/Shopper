@@ -1,6 +1,6 @@
 This is a Rails application which builds an entire e-commerce store with a lovely design
 which can be used as a template for building new stores or just for exploring the 
-functionality provided by the [Shoppe platform](http://github.com/niftyware/shoppe).
+functionality provided by the [Shoppe platform](http://github.com/tryshoppe/core).
 
 ![Example UI](http://s.adamcooke.io/rgmCL.png)
 
