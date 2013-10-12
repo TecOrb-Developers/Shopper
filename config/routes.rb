@@ -9,10 +9,11 @@ ExampleStore::Application.routes.draw do
   # Product browising
   #
   get 'products' => 'products#categories', :as => 'catalogue'
+  get 'products/filter' => 'products#filter', :as => 'product_filter'
   get 'products/:category_id' => 'products#index', :as => 'products'
   get 'products/:category_id/:product_id' => 'products#show', :as => 'product'
   post 'products/:category_id/:product_id/buy' => 'products#add_to_basket', :as => 'buy_product'
-
+  
   #
   # Order status
   #

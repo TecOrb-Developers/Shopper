@@ -475,6 +475,13 @@ section.content {
 				}
 			}
 			
+			table.attributes {
+				width:100%;
+				font-size:0.8em;
+				td, th { border:1px solid #C4DDDE; padding:6px;}
+				th { background:#f2fbfb;font-weight:normal; text-align:left;width:30%;}
+			}
+			
 			div.description {
 				font-size:0.9em;
 				line-height:1.7;

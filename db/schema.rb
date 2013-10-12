@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007121147) do
+ActiveRecord::Schema.define(version: 20131012123829) do
 
   create_table "nifty_attachments", force: true do |t|
     t.integer  "parent_id"
@@ -100,6 +100,16 @@ ActiveRecord::Schema.define(version: 20131007121147) do
     t.string   "country"
     t.string   "payment_reference"
     t.string   "payment_method"
+  end
+
+  create_table "shoppe_product_attributes", force: true do |t|
+    t.integer  "product_id"
+    t.string   "key"
+    t.string   "value"
+    t.integer  "position",   default: 1
+    t.boolean  "searchable", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shoppe_product_categories", force: true do |t|

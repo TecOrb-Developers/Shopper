@@ -13,8 +13,16 @@ class ProductsController < ApplicationController
     @products = @product_category.products.includes(:default_image, :product_category).active
   end
   
+  def filter
+    @products = Shoppe::Product.active.with_attributes(params[:key].to_s, params[:value].to_s)
+  end
+  
   def categories
     @product_categories = Shoppe::ProductCategory.ordered.includes(:image)
+  end
+  
+  def show
+    @attributes = @product.product_attributes.to_a
   end
   
   def add_to_basket

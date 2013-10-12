@@ -1,0 +1,9 @@
+- active_nav_item :catalogue
+- @page_title = "#{params[:value]} - Products"
+.category
+  %h2 Products
+  %p.intro Displaying products where <b>#{params[:key]}</b> is <b>#{params[:value]}</b>.
+  - if @products.empty?
+    %p.noProducts There are no products matching your filter
+  - else
+    = render 'shared/product_list', :products => @products

@@ -9,4 +9,4 @@ gem 'jquery-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'country_select'
 gem 'redcarpet'
-gem 'shoppe'
+gem 'shoppe', :git => 'git://github.com/tryshoppe/core.git'

@@ -33,5 +33,12 @@
                 = markdown @product.in_the_box
           %li.item.ask= mail_to Shoppe.config[:email_address], "Ask us a question about this", :subject => "Question about the #{@product.title}"
   %hr
+
+  - unless @attributes.empty?
+    %table.attributes
+      - for attribute in @attributes
+        %tr
+          %th= attribute.key
+          %td= link_to attribute.value, product_filter_path(:key => attribute.key, :value => attribute.value)
   .description
     = markdown @product.description
