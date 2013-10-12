@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   end
   
   def show
-    @attributes = @product.product_attributes.to_a
+    @attributes = @product.product_attributes.public.to_a
   end
   
   def add_to_basket
