@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012163301) do
+ActiveRecord::Schema.define(version: 20131013131658) do
 
   create_table "nifty_attachments", force: true do |t|
     t.integer  "parent_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20131012163301) do
     t.integer  "delivery_service_id"
     t.string   "code"
     t.decimal  "price",               precision: 8, scale: 2
+    t.decimal  "cost_price",          precision: 8, scale: 2
     t.decimal  "tax_rate",            precision: 8, scale: 2
     t.decimal  "min_weight",          precision: 8, scale: 2
     t.decimal  "max_weight",          precision: 8, scale: 2
@@ -59,11 +60,12 @@ ActiveRecord::Schema.define(version: 20131012163301) do
   create_table "shoppe_order_items", force: true do |t|
     t.integer  "order_id"
     t.integer  "product_id"
-    t.integer  "quantity",                           default: 1
-    t.decimal  "unit_price", precision: 8, scale: 2
-    t.decimal  "tax_amount", precision: 8, scale: 2
-    t.decimal  "tax_rate",   precision: 8, scale: 2
-    t.decimal  "weight",     precision: 8, scale: 3, default: 0.0
+    t.integer  "quantity",                                default: 1
+    t.decimal  "unit_price",      precision: 8, scale: 2
+    t.decimal  "unit_cost_price", precision: 8, scale: 2
+    t.decimal  "tax_amount",      precision: 8, scale: 2
+    t.decimal  "tax_rate",        precision: 8, scale: 2
+    t.decimal  "weight",          precision: 8, scale: 3, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,6 +90,7 @@ ActiveRecord::Schema.define(version: 20131012163301) do
     t.datetime "updated_at"
     t.integer  "delivery_service_id"
     t.decimal  "delivery_price",      precision: 8, scale: 2
+    t.decimal  "delivery_cost_price", precision: 8, scale: 2
     t.decimal  "delivery_tax_rate",   precision: 8, scale: 2
     t.decimal  "delivery_tax_amount", precision: 8, scale: 2
     t.datetime "paid_at"
@@ -131,12 +134,14 @@ ActiveRecord::Schema.define(version: 20131012163301) do
     t.boolean  "active",                                      default: true
     t.decimal  "weight",              precision: 8, scale: 3, default: 0.0
     t.decimal  "price",               precision: 8, scale: 2, default: 0.0
+    t.decimal  "cost_price",          precision: 8, scale: 2
     t.decimal  "tax_rate",            precision: 8, scale: 2, default: 0.0
     t.integer  "stock",                                       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "featured",                                    default: false
     t.text     "in_the_box"
+    t.boolean  "stock_control",                               default: true
   end
 
   create_table "shoppe_users", force: true do |t|

@@ -20,7 +20,7 @@ $ cp config/database.example.yml config/database.yml
 # -> Add the appropriate database configuration to database.yml
 
 $ bundle
-$ rake db:migrate shoppe:create_default_user shoppe:seed
+$ rake db:schema:load shoppe:create_default_user shoppe:seed
 $ rails server
 ```
 
