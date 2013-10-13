@@ -15,7 +15,7 @@ ExampleStore::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = Shoppe.config[:smtp_settings]
+  config.action_mailer.smtp_settings = Shoppe.config[:smtp_settings].symbolize_keys
   
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
