@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: 3e88f7c2e37ca761819e0ca6f81b55c931cf9b08
+  revision: fbfd7082d1daa84e16223745bcfebd83149303b0
   specs:
     shoppe (0.0.8)
       bcrypt-ruby (~> 3.0.0)
@@ -142,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   country_select
+  haml
   jquery-rails
   mysql2
   rails (= 4.0.0)
