@@ -13,7 +13,7 @@
       %dl
         %dt= label_tag 'exp_month', "Expiry Date (mm/yyyy)"
         %dd.expiry
-          = select_tag nil, options_for_select((1..12).to_a), :id => ''
+          = select_tag nil, options_for_select((1..12).to_a)
           = select_tag nil, options_for_select((Date.today.year..Date.today.year + 10).to_a), :class => 'year'
       %dl
         %dt= label_tag 'cvc', "Security Code"
