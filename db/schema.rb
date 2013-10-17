@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017144430) do
+ActiveRecord::Schema.define(version: 20131017180920) do
 
   create_table "nifty_attachments", force: true do |t|
     t.integer  "parent_id"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20131017144430) do
     t.string  "group"
     t.string  "name"
     t.string  "value"
+  end
+
+  create_table "shoppe_countries", force: true do |t|
+    t.string  "name"
+    t.string  "code2"
+    t.string  "code3"
+    t.string  "continent"
+    t.string  "tld"
+    t.string  "currency"
+    t.boolean "eu_member", default: false
   end
 
   create_table "shoppe_delivery_service_prices", force: true do |t|
@@ -80,6 +90,7 @@ ActiveRecord::Schema.define(version: 20131017144430) do
     t.string   "address3"
     t.string   "address4"
     t.string   "postcode"
+    t.integer  "country_id"
     t.string   "email_address"
     t.string   "phone_number"
     t.string   "status"
@@ -100,7 +111,6 @@ ActiveRecord::Schema.define(version: 20131017144430) do
     t.datetime "rejected_at"
     t.integer  "rejected_by"
     t.string   "ip_address"
-    t.string   "country"
     t.string   "payment_reference"
     t.string   "payment_method"
   end

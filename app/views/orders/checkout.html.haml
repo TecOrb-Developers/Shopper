@@ -40,7 +40,7 @@
             %dd= f.text_field :address2, :placeholder => "Line 2"
             %dd= f.text_field :address3, :placeholder => "Town/City"
             %dd= f.text_field :address4, :placeholder => "County"
-            %dd= f.country_select :country, ['United Kingdom', 'United States']
+            %dd= f.collection_select :country_id, Shoppe::Country.ordered, :id, :name
             %dt= f.label :postcode, "Postcode", :class => 'req'
             %dd= f.text_field :postcode, :placeholder => "", :class => 'postcode'
       

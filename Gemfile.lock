@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: b776bac59c5c206ff9c4fa0acfe8bafdc7885241
+  revision: e44736b583edb96958c561306104b273ee82fc75
   specs:
     shoppe (0.0.11)
       bcrypt-ruby (~> 3.0.0)
@@ -55,7 +55,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    country_select (1.2.0)
     dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -141,7 +140,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  country_select
   haml
   jquery-rails
   mysql2

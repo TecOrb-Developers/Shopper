@@ -8,7 +8,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'therubyracer', platforms: :ruby
-gem 'country_select'
 gem 'redcarpet'
 #gem 'shoppe', :path => '../core'
 gem 'shoppe', :git => 'git://github.com/tryshoppe/core.git'

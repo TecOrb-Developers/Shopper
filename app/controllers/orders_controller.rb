@@ -75,8 +75,9 @@ class OrdersController < ApplicationController
   
   def checkout
     @order = Shoppe::Order.find(current_order.id)
+    @order.country = Shoppe::Country.find_by_name('United Kingdom') if @order.country.nil?
     if request.patch?
-      @order.attributes = params[:order].permit(:first_name, :last_name, :company, :address1, :address2, :address3, :address4, :country, :postcode, :email_address, :phone_number)
+      @order.attributes = params[:order].permit(:first_name, :last_name, :company, :address1, :address2, :address3, :address4, :country_id, :postcode, :email_address, :phone_number)
       @order.ip_address = request.ip
       if @order.proceed_to_confirm
         redirect_to checkout_payment_path
