@@ -19,3 +19,6 @@
 config/database.yml
 config/shoppe.yml
 config/session_token.yml
+
+# Ignore assets
+public/assets
