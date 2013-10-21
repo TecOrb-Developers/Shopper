@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: 8fab6354b2a399f81afa0a05c2609767ab685e10
+  revision: bca74a6ab946ecf800baa10de609d4c6054a7f28
   specs:
-    shoppe (0.0.12)
+    shoppe (0.0.13)
       bcrypt-ruby (~> 3.0.0)
       coffee-rails (~> 4.0.0)
       dynamic_form (~> 1.1.4)
