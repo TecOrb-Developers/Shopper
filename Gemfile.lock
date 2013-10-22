@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: 903d03379d35efedde70dff293a59c26053f337c
+  revision: ac577048c468cd99ffb3d1ab9c1ef998a4540d22
   specs:
     shoppe (0.0.15)
       bcrypt-ruby (~> 3.0.0)
@@ -10,6 +10,7 @@ GIT
       jquery-rails (~> 3.0.4)
       kaminari (~> 0.14.1)
       nifty-attachments (~> 1.0.0)
+      nifty-dialog (~> 1.0.0)
       nifty-key-value-store (~> 1.0.0)
       nifty-utils (~> 1.0.0)
       rails (~> 4.0.0)
@@ -48,9 +49,9 @@ GEM
     atomic (1.1.14)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
-    coffee-rails (4.0.0)
+    coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0.beta, < 5.0)
+      railties (>= 4.0.0, < 5.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -74,9 +75,10 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     minitest (4.7.5)
-    multi_json (1.8.1)
+    multi_json (1.8.2)
     mysql2 (0.3.13)
     nifty-attachments (1.0.0)
+    nifty-dialog (1.0.1)
     nifty-key-value-store (1.0.0)
     nifty-utils (1.0.0)
     polyamorous (0.6.4)
@@ -106,8 +108,8 @@ GEM
     redcarpet (3.0.0)
     ref (1.0.5)
     sass (3.2.12)
-    sass-rails (4.0.0)
-      railties (>= 4.0.0.beta, < 5.0)
+    sass-rails (4.0.1)
+      railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
     sprockets (2.10.0)
@@ -115,7 +117,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.0.0)
+    sprockets-rails (2.0.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
@@ -130,7 +132,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.37)
+    tzinfo (0.3.38)
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
