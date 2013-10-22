@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   
   # Has an active order?
   def has_order?
-    session[:order_id] && @current_order = Shoppe::Order.includes(:order_items => :product).find_by_id(session[:order_id])
+    session[:order_id] && @current_order = Shoppe::Order.includes(:order_items => :ordered_item).find_by_id(session[:order_id])
   end
   
   helper_method :current_order, :has_order?

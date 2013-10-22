@@ -1,9 +1,9 @@
 - active_nav_item :catalogue
-- @page_title = @product.title + " - " + @product.product_category.name
+- @page_title = @product.name + " - " + @product.product_category.name
 .product
   - if @product.default_image
     .img{:style => "background-image:url(#{@product.default_image.path})"}
-  %h2= @product.title
+  %h2= @product.name
   %p.intro= @product.short_description
   
   .optionsBox
@@ -31,7 +31,7 @@
               %div.in_the_box
                 %h3 What's in the box?
                 = markdown @product.in_the_box
-          %li.item.ask= mail_to Shoppe.config[:email_address], "Ask us a question about this", :subject => "Question about the #{@product.title}"
+          %li.item.ask= mail_to Shoppe.config[:email_address], "Ask us a question about this", :subject => "Question about the #{@product.name}"
   %hr
 
   - unless @attributes.empty?

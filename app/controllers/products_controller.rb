@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   end
   
   def add_to_basket
-    current_order.order_items.add_product(@product, params[:quantity].blank? ? 1 : params[:quantity].to_i)
+    current_order.order_items.add_item(@product, params[:quantity].blank? ? 1 : params[:quantity].to_i)
     respond_to do |wants|
       wants.html { redirect_to request.referer }
       wants.json { render :json => {:added => true} }

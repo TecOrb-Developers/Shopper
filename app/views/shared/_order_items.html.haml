@@ -16,7 +16,10 @@
               = link_to "-", adjust_basket_item_quantity_path(item.id), :method => :delete, :class => 'ajax'
           = item.quantity
         %td.product
-          = link_to item.product.title, product_path(item.product.product_category.permalink, item.product.permalink)
+          - if item.ordered_item.is_a?(Shoppe::Product)
+            = link_to item.ordered_item.name, product_path(item.ordered_item.product_category.permalink, item.ordered_item.permalink)
+          - else
+            = item.name
           - unless defined?(readonly)
             = link_to "Delete", remove_basket_item_path(item), :method => :delete, :class => 'delete ajax'
         %td.money.price= number_to_currency item.sub_total
