@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: 501d64cf124f25c0c7f46577bfa03ac6008aee02
+  revision: db84dba9b62b82c357548ef737f60454dd2c3b05
   specs:
     shoppe (0.0.15)
       bcrypt-ruby (~> 3.0.0)
@@ -59,6 +59,8 @@ GEM
     dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.1.2)
+      i18n (~> 0.5)
     haml (4.0.3)
       tilt
     hike (1.2.3)
@@ -142,6 +144,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  faker
   haml
   jquery-rails
   mysql2

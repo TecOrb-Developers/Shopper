@@ -75,12 +75,26 @@ class OrdersController < ApplicationController
   
   def checkout
     @order = Shoppe::Order.find(current_order.id)
+    
+    
     if request.patch?
       @order.attributes = params[:order].permit(:first_name, :last_name, :company, :address1, :address2, :address3, :address4, :country_id, :postcode, :email_address, :phone_number)
       @order.ip_address = request.ip
       if @order.proceed_to_confirm
         redirect_to checkout_payment_path
       end
+    else
+      # Add some example order data for the example. In a real application
+      # this shouldn't be present.
+      @order.first_name = Faker::Name.first_name                                            if @order.first_name.blank?
+      @order.last_name = Faker::Name.last_name                                              if @order.last_name.blank?
+      @order.company = Faker::Company.name                                                  if @order.company.blank?
+      @order.email_address = Faker::Internet.email                                          if @order.email_address.blank?
+      @order.phone_number = Faker::PhoneNumber.phone_number                                 if @order.phone_number.blank?
+      @order.address1 = Faker::Address.building_number + " " + Faker::Address.street_name   if @order.address1.blank?
+      @order.address3 = Faker::Address.city                                                 if @order.address3.blank?
+      @order.address4 = Faker::Address.state                                                if @order.address4.blank?
+      @order.postcode = Faker::Address.zip                                                  if @order.postcode.blank?
     end
   end
   

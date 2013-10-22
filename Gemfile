@@ -9,5 +9,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'redcarpet'
+gem 'faker'
 #gem 'shoppe', :path => '../core'
 gem 'shoppe', :git => 'git://github.com/tryshoppe/core.git'
