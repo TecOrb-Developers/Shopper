@@ -402,6 +402,39 @@ section.content {
 			h2 { font-size:2.0em;color:#216d74;}
 			p.intro { font-size:0.8em; color:#333; line-height:1.5; margin-top:8px; width:50%;}
 			hr { margin-top:200px; border-color:#C4DDDE;}
+			
+			table.variants {
+				width:100%;
+				margin:25px 0;
+				font-size:0.8em;
+				td { border:1px solid #C4DDDE; background:#f4f9f9; line-height:1.5; padding:10px; vertical-align:middle;}
+				td.buy { width:150px; background:#fff;}
+				td h4 { font-size:1.2em; color:#216D74;}
+				td p.stock { float:right; margin-top:10px;}
+				td p.stock.yes { color:#5DBCC4; font-size:1em; background:image-url('tick.svg') no-repeat 0 3px; background-size:13px; padding-left:18px; font-weight:600}
+				td p.stock.no { color:#c04a4a; font-size:1em; background:image-url('unhappy.svg') no-repeat 0 3px; background-size:13px; padding-left:18px; font-weight:600;}
+				
+				td form {
+					input { float:right; background:#256D73; border:0; font-family:$font; height:24px; padding:4px 12px; color:#fff; border-radius:4px; font-weight:bold; font-size:0.9em; margin-left:4px;}
+					select {
+						-webkit-appearance: none;
+						background:image-url('down-arrow.svg') #DEE9EB no-repeat 24px 11px;
+						width:40px;
+						background-size:7px;
+						border:0;
+						height:24px;
+						font-weight:bold;
+						padding:4px 10px;
+						font-family:$font;
+						color:#256D73;
+					}
+					&.no-stock {
+						select { background-color:#efefef; background-image:image-url('down-arrow-grey.svg'); color:#ccc;}
+						input { background:#ddd}
+					}
+				}
+			}
+			
 			div.optionsBox {
 				margin-top:50px;
 				position:absolute;

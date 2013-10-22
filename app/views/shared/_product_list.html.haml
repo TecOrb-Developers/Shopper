@@ -6,5 +6,7 @@
       %p.info= truncate product.short_description, :length => 90
       %p.buttons 
         = link_to "Info", product_path(product.product_category.permalink, product.permalink)
-        = link_to "Add", buy_product_path(product.product_category.permalink, product.permalink), :class => 'add', :method => :post
+        - if product.orderable?
+          = link_to "Add", buy_product_path(product.product_category.permalink, product.permalink), :class => 'add', :method => :post
       %p.price= number_to_currency product.price
+      
