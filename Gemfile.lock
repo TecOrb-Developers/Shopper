@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: a0d9a5268e99ba6265a7d9c762d12820177e68d0
+  revision: ea7200ba216df7d04afa9e1083ed357239e32f4f
   specs:
     shoppe (0.0.16)
       bcrypt-ruby (~> 3.0.0)
@@ -45,7 +45,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    arel (4.0.0)
+    arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
