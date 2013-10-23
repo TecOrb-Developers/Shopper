@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023122504) do
+ActiveRecord::Schema.define(version: 20131007121147) do
 
   create_table "nifty_attachments", force: true do |t|
     t.integer  "parent_id"
