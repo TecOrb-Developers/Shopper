@@ -7,6 +7,35 @@ body { -webkit-font-smoothing:antialiased}
 a { color:inherit;}
 
 //
+// Demo banner
+//
+div.demo {
+	background:#1476ba;
+	color:#fff;
+	border-bottom:1px solid #0c588e;
+	font-size:0.8em;
+	div.inner {
+		background:image-url('shoppe/logo.svg') no-repeat 0 14px;
+		background-size:24px;
+		padding:15px 0;
+		p.text { margin-left:34px;}
+		ul.links {
+			float:right;
+			li {
+				float:left;
+				margin-left:15px;
+				a {
+					background:rgba(255,255,255,0.2);
+					text-decoration:none;
+					padding:3px 10px;
+					border-radius:4px;
+				}
+			}
+		}
+	}
+}
+
+//
 // The inner container for the page
 //
 div.inner {
