@@ -1,8 +1,9 @@
-This is a Rails application which builds an entire e-commerce store with a lovely design
-which can be used as a template for building new stores or just for exploring the 
-functionality provided by the [Shoppe platform](http://github.com/tryshoppe/core).
+This is a Rails application which has been built using
+[Shoppe](http://github.com/tryshoppe/core). It features a lovely design to fully
+demonstrate the functionality provided by the Shoppe platform and how well it works
+with a Rails application.
 
-![Example UI](http://s.adamcooke.io/rgmCL.png)
+![Example UI](http://s.adamcooke.io/OlRNo.png)
 
 ## Getting Started
 
@@ -20,14 +21,14 @@ $ cp config/database.example.yml config/database.yml
 # -> Add the appropriate database configuration to database.yml
 
 $ bundle
-$ rake db:schema:load shoppe:create_default_user shoppe:seed
+$ rake db:schema:load shoppe:setup shoppe:seed
 $ rails server
 ```
 
 A few notes about this demo store:
 
 * The store does not currently implement any payment integration. It will ask
-  for card details during checkout but these will not be checked.
+  for card details during checkout but these will not be checked (or submitted).
 
 * The design remains copyright Niftyware Limited. Please do not use the design
   wholesale for any sites you may be developing.
