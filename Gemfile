@@ -12,3 +12,7 @@ gem 'redcarpet'
 gem 'faker'
 #gem 'shoppe', :path => '../core'
 gem 'shoppe', :git => 'git://github.com/tryshoppe/core.git'
+
+group :development do
+  gem 'capistrano'
+end
