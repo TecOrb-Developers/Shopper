@@ -39,5 +39,9 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "mkdir -p #{current_path}/tmp && touch #{current_path}/tmp/restart.txt"
   end
+  
+  task :reset, :roles => :db do
+    run "cd #{current_path} && RAILS_ENV=#{fetch(:rails_env)} bundle exec rake db:reset shoppe:setup shoppe:seed"
+  end
 end
 
