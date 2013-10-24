@@ -10,7 +10,7 @@ set :use_sudo,              false
 set :deploy_to,             "/opt/rubyapps/shoppe-example"
 set :user,                  'rubyapps'
 set :assets_role,           [:app]
-set :config_files,          ['database.yml', 'shoppe.yml', 'session_token.yml']
+set :config_files,          ['database.yml', 'session_token.yml']
 
 load 'deploy'
 load 'deploy/assets'
