@@ -8,14 +8,14 @@
         %dd= @order.first_name + ' ' + @order.last_name
         %dt Company
         %dd= @order.company.blank? ? '-' : @order.company
-        %dt Address
-        %dd= @order.address1
-        %dd= @order.address2
-        %dd= @order.address3
-        %dd= @order.address4
+        %dt Delivery Address
+        %dd= @order.delivery_address1
+        %dd= @order.delivery_address2
+        %dd= @order.delivery_address3
+        %dd= @order.delivery_address4
         %dt Postcode
-        %dd= @order.postcode
-        %dd= @order.country
+        %dd= @order.delivery_postcode
+        %dd= @order.delivery_country.try(:id)
     .right
       %dl
         %dt Order Number

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
       if has_order?
         @current_order
       else
-        order = Shoppe::Order.create(:ip_address => request.ip, :country => Shoppe::Country.where(:name => "United Kingdom").first)
+        order = Shoppe::Order.create(:ip_address => request.ip, :billing_country => Shoppe::Country.where(:name => "United Kingdom").first)
         session[:order_id] = order.id
         order
       end

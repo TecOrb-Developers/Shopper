@@ -35,15 +35,24 @@
 
         = field_set_tag do
           %dl
-            %dt= f.label :address1, "Billing/Delivery Address", :class => 'req'
-            %dd= f.text_field :address1, :placeholder => "Line 1"
-            %dd= f.text_field :address2, :placeholder => "Line 2"
-            %dd= f.text_field :address3, :placeholder => "Town/City"
-            %dd= f.text_field :address4, :placeholder => "County"
-            %dd= f.collection_select :country_id, Shoppe::Country.ordered, :id, :name
-            %dt= f.label :postcode, "Postcode", :class => 'req'
-            %dd= f.text_field :postcode, :placeholder => "", :class => 'postcode'
-      
+            %dt= f.label :billing_address1, "Billing Address", :class => 'req'
+            %dd= f.text_field :billing_address1, :placeholder => "Line 1"
+            %dd= f.text_field :billing_address3, :placeholder => "Town/City"
+            %dd= f.text_field :billing_address4, :placeholder => "County"
+            %dd= f.text_field :billing_postcode, :placeholder => "Postcode", :class => 'postcode'
+            %dd= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name
+            %dd
+              = f.check_box :separate_delivery_address
+              = f.label :separate_delivery_address, "Deliver to a different address?"
+          %dl.delivery
+            %dt= f.label :delivery_address1, "Delivery Address", :class => 'req'
+            %dd= f.text_field :delivery_name, :placeholder => "Deliver to (name/company)"
+            %dd= f.text_field :delivery_address1, :placeholder => "Line 1"
+            %dd= f.text_field :delivery_address3, :placeholder => "Town/City"
+            %dd= f.text_field :delivery_address4, :placeholder => "County"
+            %dd= f.text_field :delivery_postcode, :placeholder => "Postcode", :class => 'postcode'
+            %dd= f.collection_select :delivery_country_id, Shoppe::Country.ordered, :id, :name
+            
       %p.submit= f.submit "Continue to payment"
 
   - else

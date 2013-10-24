@@ -18,6 +18,15 @@ $ ->
     addOverlay -> item.hide()
     false
   
+  toggleDeliveryAddress = ->
+    if $('div.checkout input#order_separate_delivery_address').prop('checked')
+      $('div.checkout dl.delivery').show()
+    else
+      $('div.checkout dl.delivery').hide()
+    false
+  $('div.checkout input#order_separate_delivery_address').on 'change', toggleDeliveryAddress
+  toggleDeliveryAddress() if $('div.checkout').length
+  
   #
   # Receive some response from the orders controller and update the order items
   # table as appropriate.

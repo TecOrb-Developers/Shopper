@@ -327,12 +327,14 @@ section.content {
 					width:50%;
 					float:left;
 					legend { font-size:1.2em; font-weight:bold;}
+					dl.delivery { display:none;}
 					dt { color:#888; margin-top:0px;}
 					dt label.req:after { content:'*'; color:red; margin-left:5px;}
 					dd {
 						margin:10px 0;
-						input { font-size:1.3em; font-family:$font; padding:5px;font-size:1.2em; width:96%; border:1px solid #ccc; background:#f8f8f8; border-radius:4px;}
-						input:focus { border-color:#777; background:#fff;}
+						input[type=text] { font-size:1.3em; font-family:$font; padding:5px;font-size:1.2em; width:96%; border:1px solid #ccc; background:#f8f8f8; border-radius:4px;}
+						input[type=text]:focus { border-color:#777; background:#fff;}
+						input[type=checkbox] { float:left; margin-right:8px;margin-top:2px;}
 						&.name input { width:45%;}
 						&.name input:first-child { margin-right:7px;}
 						input.postcode { width:30%;}

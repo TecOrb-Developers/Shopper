@@ -78,7 +78,7 @@ class OrdersController < ApplicationController
     
     
     if request.patch?
-      @order.attributes = params[:order].permit(:first_name, :last_name, :company, :address1, :address2, :address3, :address4, :country_id, :postcode, :email_address, :phone_number)
+      @order.attributes = params[:order].permit(:first_name, :last_name, :company, :billing_address1, :billing_address2, :billing_address3, :billing_address4, :billing_country_id, :billing_postcode, :email_address, :phone_number, :delivery_name, :delivery_address1, :delivery_address2, :delivery_address3, :delivery_address4, :delivery_postcode, :delivery_country_id, :separate_delivery_address)
       @order.ip_address = request.ip
       if @order.proceed_to_confirm
         redirect_to checkout_payment_path
@@ -92,10 +92,10 @@ class OrdersController < ApplicationController
       @order.company = Faker::Company.name                                                  if @order.company.blank?
       @order.email_address = Faker::Internet.email                                          if @order.email_address.blank?
       @order.phone_number = Faker::PhoneNumber.phone_number                                 if @order.phone_number.blank?
-      @order.address1 = Faker::Address.building_number + " " + Faker::Address.street_name   if @order.address1.blank?
-      @order.address3 = Faker::Address.city                                                 if @order.address3.blank?
-      @order.address4 = Faker::Address.county                                                if @order.address4.blank?
-      @order.postcode = Faker::Address.zip                                                  if @order.postcode.blank?
+      @order.billing_address1 = Faker::Address.building_number + " " + Faker::Address.street_name   if @order.billing_address1.blank?
+      @order.billing_address3 = Faker::Address.city                                                 if @order.billing_address3.blank?
+      @order.billing_address4 = Faker::Address.county                                               if @order.billing_address4.blank?
+      @order.billing_postcode = Faker::Address.zip                                                  if @order.billing_postcode.blank?
     end
   end
   

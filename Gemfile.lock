@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: 0ce632127d2733a4f00354419f0625059fbd7569
+  revision: c3a099d2771e6e20574a97727b872096ff438238
   specs:
     shoppe (0.0.16)
       bcrypt-ruby (~> 3.0.0)
