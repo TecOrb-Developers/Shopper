@@ -1,10 +1,5 @@
 module ApplicationHelper
   
-  def number_to_currency(number, options = {})
-    options[:unit] ||= Shoppe.settings.currency_unit
-    super
-  end
-  
   def time_until_next_delivery_cutoff
     '4 hours'
   end
