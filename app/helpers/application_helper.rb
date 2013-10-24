@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def number_to_currency(number, options = {})
-    options[:unit] ||= Shoppe.config[:currency_unit]
+    options[:unit] ||= Shoppe.settings.currency_unit
     super
   end
   

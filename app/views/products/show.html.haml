@@ -48,7 +48,7 @@
                 %div.in_the_box
                   %h3 What's in the box?
                   = markdown @product.in_the_box
-            %li.item.ask= mail_to Shoppe.config[:email_address], "Ask us a question about this", :subject => "Question about the #{@product.name}"
+            %li.item.ask= mail_to Shoppe.settings.email_address, "Ask us a question about this", :subject => "Question about the #{@product.name}"
 
     %hr
 

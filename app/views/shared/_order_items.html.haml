@@ -4,7 +4,7 @@
       %td Qty
       %td Item
       %td Price
-      %td= Shoppe.config[:tax_name]
+      %td= Shoppe.settings.tax_name
       %td Sub-Total
   %tbody
     - for item in order.order_items
@@ -33,10 +33,10 @@
               = select_tag 'delivery_service', options_from_collection_for_select(order.available_delivery_services, :id, :name, order.delivery_service.id)
         %td.money= number_to_currency order.delivery_price
     %tr.subtotal
-      %td{:colspan => 4} Total (excluding #{Shoppe.config[:tax_name]})
+      %td{:colspan => 4} Total (excluding #{Shoppe.settings.tax_name})
       %td.money= number_to_currency order.total_before_tax
     %tr.tax
-      %td{:colspan => 4}= Shoppe.config[:tax_name]
+      %td{:colspan => 4}= Shoppe.settings.tax_name
       %td.money= number_to_currency order.tax
     %tr.total
       %td{:colspan => 4} Total

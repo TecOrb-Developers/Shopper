@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title #{@page_title} - #{Shoppe.config[:store_name]}
+    %title #{@page_title} - #{Shoppe.settings.store_name}
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
@@ -34,7 +34,7 @@
             %li= link_to "Why shop with us?", page_path(:why), :nav_item => :why
             %li= link_to "FAQs", page_path(:faqs), :nav_item => :faqs
             %li= link_to "Get in touch", page_path(:contact), :nav_item => :contact
-          %h1= link_to Shoppe.config[:store_name], root_path
+          %h1= link_to Shoppe.settings.store_name, root_path
         
         - if @full_header
           %h2 Welcome to our <em>shoppe</em>.
