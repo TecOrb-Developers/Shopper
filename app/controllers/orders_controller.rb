@@ -115,6 +115,9 @@ class OrdersController < ApplicationController
     if request.patch?
       begin
         current_order.confirm!
+        # This payment method should usually be called in a payment module or elsewhere but for the demo
+        # we are adding a payment to the order straight away.
+        current_order.payments.create(:method => "Credit Card", :amount => current_order.total, :reference => rand(10000) + 10000, :refundable => true)
         session[:order_id] = nil
         redirect_to root_path, :notice => "Order has been placed!"
       rescue Shoppe::Errors::PaymentDeclined => e
