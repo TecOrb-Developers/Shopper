@@ -11,7 +11,7 @@
   %h3 Review the products in your shopping bag
   = render 'shared/order_items', :order => @order
 
-  - if @order.delivery_service
+  - unless @order.delivery_required? && @order.delivery_service.nil?
     %h3 Complete your details below to complete your order
     
     = form_for @order, :url => checkout_path, :html => {:class => 'checkout disableable'} do |f|

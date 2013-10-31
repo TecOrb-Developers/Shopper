@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/tryshoppe/core.git
-  revision: a2c9e6f389a58800e7eeede8830939f6d03f59ee
+  revision: 8b53ab8a6212b66656b6429ef0a751dc406509ec
   specs:
-    shoppe (0.0.17)
+    shoppe (0.0.19)
       bcrypt-ruby (~> 3.0.0)
       coffee-rails (~> 4.0.0)
       dynamic_form (~> 1.1.4)
@@ -16,7 +16,7 @@ GIT
       rails (~> 4.0.0)
       ransack (~> 1.0.0)
       sass-rails (~> 4.0.0)
-      uglifier (~> 2.2.1)
+      uglifier (>= 2.2.0)
 
 GEM
   remote: https://rubygems.org/
