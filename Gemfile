@@ -11,7 +11,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'redcarpet'
 gem 'faker'
 #gem 'shoppe', :path => '../core'
-gem 'shoppe', :git => 'git://github.com/tryshoppe/core.git'
+gem 'shoppe'
 
 group :development do
   gem 'capistrano'
