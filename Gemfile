@@ -9,8 +9,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'redcarpet'
 gem 'faker'
-#gem 'shoppe', :path => '../core'
-gem 'shoppe'
+gem 'shoppe', '~> 0.0.20'
 
 group :development do
   gem 'capistrano'
