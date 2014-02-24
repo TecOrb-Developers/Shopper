@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'redcarpet'
 gem 'faker'
 gem 'shoppe', '~> 0.0.20'
+gem 'thin'
 
 group :development do
   gem 'capistrano'
