@@ -14,9 +14,6 @@ below and you'll be up and running in minutes with a demo store with demo data.
 $ git clone git://github.com/niftyware/shoppe-example.git
 $ cd shoppe-example
 
-$ cp config/shoppe.example.yml config/shoppe.yml
-# -> Add the appropriate SMTP server configuration to shoppe.yml
-
 $ cp config/database.example.yml config/database.yml
 # -> Add the appropriate database configuration to database.yml
 
@@ -33,5 +30,5 @@ A few notes about this demo store:
 * The design remains copyright Niftyware Limited. Please do not use the design
   wholesale for any sites you may be developing.
 
-* Once up and running, you can access the Shoppe interface at `/shoppe` and use 
-  **admin@example.com** and **password** to login. 
+* Once up and running, you can access the Shoppe interface at `/shoppe` and use
+  **admin@example.com** and **password** to login.
