@@ -11,7 +11,7 @@ To get started using the example store provided here is simple. Just follow the 
 below and you'll be up and running in minutes with a demo store with demo data.
 
 ```
-$ git clone git://github.com/niftyware/shoppe-example.git
+$ git clone git://github.com/tryshoppe/shoppe-example.git
 $ cd shoppe-example
 
 $ cp config/database.example.yml config/database.yml
