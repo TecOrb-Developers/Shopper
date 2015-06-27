@@ -1,4 +1,4 @@
-ExampleStore::Application.routes.draw do
+Rails.application.routes.draw do
 
   #
   # Shoppe admin interface

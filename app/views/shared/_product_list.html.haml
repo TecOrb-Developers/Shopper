@@ -1,5 +1,5 @@
 %ul.products
-  - for product in products.includes(:default_image, :product_category)
+  - for product in products.includes(:default_image)
     %li
       .img{:style => product.default_image ? "background-image:url(#{product.default_image.path})" : ''}
       %h4= link_to product.name, product_path(product.product_category.permalink, product.permalink)

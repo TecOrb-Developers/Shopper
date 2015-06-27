@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
   
   def index
-    @products = @product_category.products.includes(:default_image, :product_category, :variants).root.active
+    @products = @product_category.products.includes(:default_image, :product_categories, :variants).root.active
   end
   
   def filter

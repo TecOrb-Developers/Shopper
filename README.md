@@ -27,7 +27,7 @@ A few notes about this demo store:
 * The store does not currently implement any payment integration. It will ask
   for card details during checkout but these will not be checked (or submitted).
 
-* The design remains copyright Niftyware Limited. Please do not use the design
+* The design remains copyright aTech Media Limited. Please do not use the design
   wholesale for any sites you may be developing.
 
 * Once up and running, you can access the Shoppe interface at `/shoppe` and use
