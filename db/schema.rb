@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 20150519173350) do
 
   add_index "shoppe_addresses", ["customer_id"], name: "index_shoppe_addresses_on_customer_id"
 
+  create_table "shoppe_attachments", force: :cascade do |t|
+    t.integer  "parent_id",   null: false
+    t.string   "parent_type", null: false
+    t.string   "token"
+    t.string   "file",        null: false
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.string   "file_type"
+    t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shoppe_countries", force: :cascade do |t|
     t.string  "name"
     t.string  "code2"
