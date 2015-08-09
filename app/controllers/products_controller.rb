@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   end
   
   def categories
-    @product_categories = Shoppe::ProductCategory.ordered.includes(:image)
+    @product_categories = Shoppe::ProductCategory.ordered
   end
   
   def show
