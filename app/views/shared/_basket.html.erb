@@ -1,0 +1,13 @@
+<div class="basket">
+  <% if has_order? && current_order.has_items? %>
+    <p class="quantity"><b><%=pluralize current_order.total_items, 'item'%></b> in your shopping bag</p>
+    <p class="amount"><b><%=number_to_currency current_order.total_before_tax%></b> (ex. tax &amp; delivery)</p>
+    <p class="buttons">
+      <%= link_to "View my bag", basket_path %>
+      <%= link_to "Checkout", checkout_path, :class => 'checkout' %>
+    </p>
+  <% else %>
+    <p class="empty"><b>Your shopping bag is empty.</b> </p>
+    <p class="empty">How dare it be?! Why not add some stuff to it?</p>
+  <% end %>
+</div>

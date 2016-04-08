@@ -1,9 +1,0 @@
-- active_nav_item :home
-- @full_header = true
-- @page_title = 'Welcome'
-
-.home
-  %p.browse= link_to "Browse our whole catalogue", catalogue_path
-  %h2 Introducing our featured products
-
-= render 'shared/product_list', :products => @products

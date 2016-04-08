@@ -1,0 +1,22 @@
+<ul class="products">
+  <% for product in products %>
+    <li>
+      <div class="img" style="<%=product.default_image ? "background-image:url(#{product.default_image.path})" : ''%>"></div>
+      <h4>
+        <%= link_to product.name, product_path(product.product_category.permalink, product.permalink) %>
+      </h4>
+      <p class="info">
+        <%= truncate product.short_description, :length => 90 %>
+      </p>
+      <p class="buttons">
+        <%= link_to "Info", product_path(product.product_category.permalink, product.permalink) %>
+        <% if product.orderable? %>
+          <%= link_to "Add", buy_product_path(product.product_category.permalink, product.permalink), :class => 'add', :method => :post %>
+        <% end %>
+      </p>
+      <p class="price">
+        <%= number_to_currency product.price %>
+      </p>
+    </li>
+  <% end %>
+</ul>

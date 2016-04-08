@@ -1,0 +1,109 @@
+<% @page_title = 'Checkout' %>
+<%= render 'checkout_sidebar' %>
+<div class="checkout">
+  <p class="secure">Secure connection</p>
+  <h2>Place your order</h2>
+  <p class="intro">
+    Fantastic! You're ready to place your order, just follow the instructions below and
+    we'll get your products shipped to you as quickly as we can.
+  </p>
+  <h3>Review the products in your shopping bag</h3>
+  <%= render 'shared/order_items', :order => @order %>
+  <% unless @order.delivery_required? && @order.delivery_service.nil? %>
+    <h3>Complete your details below to complete your order</h3>
+    <%= form_for @order, :url => checkout_path, :html => {:class => 'checkout disableable'} do |f| %>
+      <%= f.error_messages %>
+      <div class="customer">
+        <%= field_set_tag do %>
+          <dl>
+            <dt>
+              <%= f.label :first_name, "Name", :class => 'req' %>
+            </dt>
+            <dd class="name">
+              <%= f.text_field :first_name, :placeholder => 'First Name' %>
+              <%= f.text_field :last_name, :placeholder => 'Last Name' %>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= f.label :company, "Company Name (optional)" %>
+            </dt>
+            <dd>
+              <%= f.text_field :company %>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= f.label :email_address, 'Your E-Mail Address', :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :email_address %>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= f.label :phone_number, 'Your Contact Phone Number', :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :phone_number %>
+            </dd>
+          </dl>
+        <% end %>
+        <%= field_set_tag do %>
+          <dl>
+            <dt>
+              <%= f.label :billing_address1, "Billing Address", :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :billing_address1, :placeholder => "Line 1" %>
+            </dd>
+            <dd>
+              <%= f.text_field :billing_address3, :placeholder => "Town/City" %>
+            </dd>
+            <dd>
+              <%= f.text_field :billing_address4, :placeholder => "County" %>
+            </dd>
+            <dd>
+              <%= f.text_field :billing_postcode, :placeholder => "Postcode", :class => 'postcode' %>
+            </dd>
+            <dd>
+              <%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name %>
+            </dd>
+            <dd>
+              <%= f.check_box :separate_delivery_address %>
+              <%= f.label :separate_delivery_address, "Deliver to a different address?" %>
+            </dd>
+          </dl>
+          <dl class="delivery">
+            <dt>
+              <%= f.label :delivery_address1, "Delivery Address", :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :delivery_name, :placeholder => "Deliver to (name/company)" %>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_address1, :placeholder => "Line 1" %>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_address3, :placeholder => "Town/City" %>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_address4, :placeholder => "County" %>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_postcode, :placeholder => "Postcode", :class => 'postcode' %>
+            </dd>
+            <dd>
+              <%= f.collection_select :delivery_country_id, Shoppe::Country.ordered, :id, :name %>
+            </dd>
+          </dl>
+        <% end %>
+      </div>
+      <p class="submit">
+        <%= f.submit "Continue to payment" %>
+      </p>
+    <% end %>
+  <% else %>
+    <p>Please call us to place this order. </p>
+  <% end %>
+</div>

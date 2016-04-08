@@ -1,0 +1,11 @@
+<% active_nav_item :catalogue %>
+<% @page_title = "#{params[:value]} - Products" %>
+<div class="category">
+  <h2>Products</h2>
+  <p class="intro">Displaying products where <b><%=params[:key]%></b> is <b><%=params[:value]%></b>.</p>
+  <% if @products.empty? %>
+    <p class="noProducts">There are no products matching your filter</p>
+  <% else %>
+    <%= render 'shared/product_list', :products => @products %>
+  <% end %>
+</div>

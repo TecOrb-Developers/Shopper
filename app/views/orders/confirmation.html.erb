@@ -1,0 +1,15 @@
+<% @page_title = 'Checkout' %>
+<%= render 'checkout_sidebar' %>
+<div class="checkout">
+  <h2>Let's do this thing!</h2>
+  <p class="intro">
+    Brilliant! We have everything we need to place the order. Check the items below carefully,
+    and if you're happy click 'Place Order' to submit the order.
+  </p>
+  <%= render 'shared/order_items', :order => current_order, :readonly => true %>
+  <%= form_tag checkout_confirmation_path, :method => :patch, :class => 'disableable' do %>
+    <p class="submit">
+      <%= submit_tag "Place Order", :class => 'order' %>
+    </p>
+  <% end %>
+</div>

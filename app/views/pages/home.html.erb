@@ -1,0 +1,10 @@
+<% active_nav_item :home %>
+<% @full_header = true %>
+<% @page_title = 'Welcome' %>
+<div class="home">
+  <p class="browse">
+    <%= link_to "Browse our whole catalogue", catalogue_path %>
+  </p>
+  <h2>Introducing our featured products</h2>
+</div>
+<%= render 'shared/product_list', :products => @products %>

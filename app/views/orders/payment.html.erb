@@ -1,0 +1,40 @@
+<% @page_title = 'Checkout' %>
+<%= render 'orders/checkout_sidebar' %>
+<div class="checkout">
+  <p class="secure">Secure connection</p>
+  <h3>Pay using your credit/debit card</h3>
+  <%= form_for @order, :url => checkout_payment_path, :html => {:class => 'checkout'} do |f| %>
+    <%= field_set_tag nil, :class => 'payment' do %>
+      <h3>This is a demo form. Any values entered here will be accepted.</h3>
+      <dl>
+        <dt>
+          <%= label_tag 'card_number', "Full Card Number" %>
+        </dt>
+        <dd class="number">
+          <%= text_field_tag 'card_number', '', :name => nil %>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <%= label_tag 'exp_month', "Expiry Date (mm/yyyy)" %>
+        </dt>
+        <dd class="expiry">
+          <%= select_tag nil, options_for_select((1..12).to_a) %>
+          <%= select_tag nil, options_for_select((Date.today.year..Date.today.year + 10).to_a), :class => 'year' %>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <%= label_tag 'cvc', "Security Code" %>
+        </dt>
+        <dd class="cvc">
+          <%= text_field_tag 'cvc', '', :name => nil, :maxlength => 4 %>
+          <span>This is the 3 digit number on the back of your card.</span>
+        </dd>
+      </dl>
+    <% end %>
+    <p class="submit">
+      <%= f.submit "Review your order", :class => 'review' %>
+    </p>
+  <% end %>
+</div>

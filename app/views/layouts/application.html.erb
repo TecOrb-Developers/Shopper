@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Tecorb Store</title>
+    <%= stylesheet_link_tag :application %>
+    <%= javascript_include_tag :application %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <%= yield :head %>
+  </head>
+  <body>
+    <div class="demo">
+      <div class="inner">
+        <ul class="links">
+          <li>
+            <%= link_to "Play with Shope Admin", "/shoppe" %>
+          </li>
+          <li>
+            <%= link_to "Nice to meet you", "#" %>
+          </li>
+        </ul>
+        <p class="text">Welcome here</p>
+      </div>
+    </div>
+    <%= display_flash %>
+    <!-- The main header displayed on all pages
+    -->
+    <header class="main <%=@full_header ? 'full' : 'basic'%>">
+    <!-- Sometimes will be shorted as the page content dictates. -->
+      <div class="inner">
+        <!-- Primary navigation
+        -->
+        <nav class="main">
+          <ul>
+            <li>
+              <%= link_to "Home", root_path, :nav_item => :home %>
+            </li>
+            <li>
+              <%= link_to "Our catalogue", catalogue_path, :nav_item => :catalogue, :class => 'noborder' %>
+              <ul>
+                <% for category in Shoppe::ProductCategory.ordered %>
+                  <li>
+                    <%= link_to category.name, products_path(category.permalink) %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+            <li>
+              <%= link_to "Why shop with us?", page_path(:why), :nav_item => :why %>
+            </li>
+            <li>
+              <%= link_to "FAQs", page_path(:faqs), :nav_item => :faqs %>
+            </li>
+            <li>
+              <%= link_to "Get in touch", page_path(:contact), :nav_item => :contact %>
+            </li>
+          </ul>
+          <h1>
+            <%= link_to Shoppe.settings.store_name, root_path %>
+          </h1>
+        </nav>
+        <% if @full_header %>
+          <h2>Welcome to our <em>shoppe</em>.</h2>
+          <p class="intro">Check out our lovely products on this page and then you can buy them through the website with just a few clicks using our supremely simple ordering system.</p>
+        <% end %>
+      </div>
+      <% if @full_header %>
+        <div class="bar">
+          <div class="inner">
+            <p class="call">Call us today on <b>01202 901 101</b> if you have any questions.</p>
+            <p class="offer"><b>This week only!</b> FREE next day shipping on all orders over &pound;30.</p>
+          </div>
+        </div>
+      <% end %>
+    </header>
+    <!-- Main content section
+    -->
+    <section class="content">
+      <div class="inner">
+        <!-- Sidebar
+        -->
+        <section class="sidebar">
+          <% if content_for?(:sidebar) %>
+            <%= yield :sidebar %>
+          <% else %>
+            <%= render 'shared/basket' %>
+            <%= render 'shared/reasons' %>
+          <% end %>
+        </section>
+        <!-- Primary section
+        -->
+        <section class="primary">
+          <%= yield %>
+        </section>
+      </div>
+    </section>
+    <!-- Footer
+    -->
+    <footer class="main">
+      <div class="inner">
+        <!-- Useful footer links (policies etc...)
+        -->
+        <ul class="links">
+          <li>
+            <%= link_to "Terms & Conditions", page_path(:terms) %>
+          </li>
+          <li>
+            <%= link_to "Privacy policy", page_path(:privacy) %>
+          </li>
+          <li>
+            <%= link_to "Returns policy", page_path(:returns) %>
+          </li>
+          <li>
+            <%= link_to "Frequently asked questions", page_path(:faqs) %>
+          </li>
+          <li>
+            <%= link_to "Cookie policy", page_path(:cookies) %>
+          </li>
+        </ul>
+        <div class="callUs">
+          <p>Got any questions? Call us today:</p>
+          <p class="number">+91 99 10 781 148</p>
+          <p>We're open 9am to 5pm, Monday to Friday.</p>
+          <!-- Links to social media
+          -->
+          <ul class="social">
+            <li class="twitter">
+              <%= link_to "Twitter", '#' %>
+            </li>
+            <li class="facebook">
+              <%= link_to "Facebook", "#" %>
+            </li>
+            <li class="pinterest">
+              <%= link_to "Pinterest", "#" %>
+            </li>
+            <li class="linkedin">
+              <%= link_to "Linked In", "#" %>
+            </li>
+            <li class="vimeo">
+              <%= link_to "Vimeo", "#" %>
+            </li>
+            <li class="youtube">
+              <%= link_to "Youtube", "#" %>
+            </li>
+          </ul>
+        </div>
+        <!-- Copyright & trademark information
+        -->
+        <div class="copyright">
+          <p>&copy; <%=Date.today.year%> TecOrb. All Rights Reserved.</p>
+          <p>All third party logos &amp; product images &copy; their respective owners.</p>
+          <p>
+            Shoppe is a trading name of aTech Media Limited.<br/>
+            Company registration number: 123 123.<br/>
+            VAT registration number: GB 123 123 123.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

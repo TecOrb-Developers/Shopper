@@ -1,0 +1,19 @@
+<% active_nav_item :catalogue %>
+<% @page_title = 'Catalogue' %>
+<div class="categories">
+  <ul>
+    <% for category in @product_categories %>
+      <li>
+        <div class="img" style="<%=category.image ? "background-image:url(#{category.image.path})" : 'background-color:#efefef'%>"></div>
+        <div class="space">
+          <h4>
+            <%= link_to category.name, products_path(category.permalink) %>
+          </h4>
+          <p>
+            <%= category.description %>
+          </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
